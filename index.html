@@ -158,6 +158,297 @@
             margin: 10px 0;
         }
 
+<<<<<<< HEAD
+        
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f7;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 0.8s 2.2s forwards;
+}
+
+.preloader-inner {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.text-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.animate-text {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: textReveal 1s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
+}
+
+.animate-subtext {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: textReveal 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.6s forwards;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 3px;
+    background: var(--primary-color);
+    margin-top: 30px;
+    animation: progress 2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes textReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progress {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { 
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* 隐藏滚动条直到加载完成 */
+body.loaded {
+    overflow: auto;
+}
+body:not(.loaded) {
+    overflow: hidden;
+}
+
+/* 修改原有nav樣式並新增 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-right: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    margin-right: auto;
+}
+
+.nav-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* 當前活動頁面樣式 */
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .nav-logo {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-content {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 15px;
+    }
+}
+    </style>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 40px; /* 增加上padding避免重疊 */
+        }
+        
+        /* 調整header上間距 */
+        header {
+            margin-bottom: 50px; /* 原80px減少 */
+        }
+        
+        /* 修改導航列高度 */
+        nav {
+            padding: 15px 0; /* 原20px減少 */
+            height: 60px; /* 固定導航高度 */
+        }
+        
+        /* 新增標題防護間距 */
+        .header-title {
+            padding-top: 30px;
+        }
+        </style>
+        <style>
+            /* 新增标题入场动画 */
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            /* 增强卡片悬停动画 */
+            .card {
+                transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+                transform-origin: center bottom;
+            }
+            
+            .card:hover {
+                transform: perspective(1000px) translateZ(20px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.12) !important;
+            }
+            
+            /* 按钮脉冲动画 */
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+            
+            .filter-btn.active {
+                animation: pulse 0.6s ease;
+            }
+            
+            /* 图标3D旋转效果 */
+            .icon-item i {
+                transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            }
+            
+            .icon-item:hover i {
+                transform: rotateY(360deg);
+            }
+            
+            /* 导航栏滚动动画 */
+            nav {
+                transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+            }
+            
+            nav.scrolled {
+                background: rgba(255,255,255,0.98);
+                box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+                padding: 12px 0;
+            }
+            </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="nav-logo">馮冠暉</div>
+            <ul class="nav-links">
+                <li><a href="#education" class="nav-link">學歷認證</a></li>
+                <li><a href="#achievements" class="nav-link">比賽獲獎</a></li>
+                <li><a href="#activities" class="nav-link">課外經歷</a></li>
+                <li><a href="https://guiadrift.asia" target="_blank" class="nav-link">車隊專頁</a></li>
+            </ul>
+        
+        </div>
+    </nav>
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="text-container">
+                <h1 class="animate-text">你好😄</h1>
+                <p class="animate-subtext">歡迎來到馮冠暉的網頁👋</p>
+            </div>
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="container">
+            <div class="header-title">
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px; text-align: left;">馮冠暉 Roy Fong</h1>
+                <p style="color: var(--secondary-color); font-size: 1.2rem; text-align: left;">
+                    氹仔坊眾學校 · 資訊科技及STEM專長學生<br>
+                    IELTS 6.5 (2024) · F1 in Schools 最佳工程設計獎得主
+                </p>
+                <a href="https://guiadrift.asia" target="_blank" 
+                style="display: inline-block; margin-top: 30px; padding: 12px 30px; 
+                        background: var(--primary-color); color: white; 
+                        text-decoration: none; border-radius: 25px;
+                        transition: transform 0.3s ease;">
+                    🏎️ 查看GUIADRIFT車隊
+                </a>
+=======
 
     </style>
 </head>
@@ -175,6 +466,7 @@
                       transition: transform 0.3s ease;">
                 🏎️ 查看GUIADRIFT車隊
             </a>
+>>>>>>> c9b5c81f2931de4806375b5185141f385562c1f6
         </header>
 
         <section class="section" id="education">
@@ -372,5 +664,65 @@
             });
         });
     </script>
+<<<<<<< HEAD
+    <script>
+        // 在现有JavaScript最前面添加加载控制
+        document.body.classList.add('loaded'); // 移除这行
+        
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                document.body.classList.add('loaded');
+            }, 2500);
+        });
+        </script>
+        <script>
+            // 新增滾動高亮功能
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                sections.forEach(section => {
+                    const top = window.scrollY;
+                    const offset = section.offsetTop - 150;
+                    const height = section.offsetHeight;
+                    const id = section.getAttribute('id');
+                    
+                    if(top >= offset && top < offset + height) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if(link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+            </script>
+            <script>
+                // 导航栏滚动效果
+                window.addEventListener('scroll', () => {
+                    const nav = document.querySelector('nav');
+                    if (window.scrollY > 100) {
+                        nav.classList.add('scrolled');
+                    } else {
+                        nav.classList.remove('scrolled');
+                    }
+                });
+                
+                // 动态进度条初始化
+                document.querySelectorAll('.cert-badge').forEach(badge => {
+                    badge.addEventListener('mousemove', (e) => {
+                        const rect = badge.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        badge.style.setProperty('--x', `${x}px`);
+                    });
+                });
+                </script>
 </body>
 </html>
+=======
+</body>
+</html>
+>>>>>>> c9b5c81f2931de4806375b5185141f385562c1f6
