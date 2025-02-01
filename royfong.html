@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馮冠暉 | 學生簡歷</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1d1d1f;
+            --secondary-color: #86868b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background: #f5f5f7;
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin: 100px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .icon-item {
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-item:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .award-category {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        .cert-badge {
+            background: #e8e8ed;
+            padding: 5px 12px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 5px 3px;
+        }
+
+         /* 新增動態效果 */
+        .icon-item:hover .grade-tag {
+            background: var(--primary-color);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        /* 新增類別顏色標識 */
+        .icon-item:nth-child(odd) .award-category {
+            color: #0071e3;
+        }
+        .icon-item:nth-child(even) .award-category {
+            color: #bf4800;
+        }
+
+        /* 新增分級標籤樣式 */
+        .grade-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.08);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+        }
+        /* 調整網格布局 */
+        .icon-grid {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        /* 新增筛选器样式 */
+        .filter-container {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            background: #f0f0f5;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* 新增參與項目樣式 */
+        .participation-item {
+            background: #f8f8fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 10px 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="font-size: 3.5rem; margin-bottom: 20px; text-align: left;">馮冠暉 Roy Fong</h1>
+            <p style="color: var(--secondary-color); font-size: 1.2rem; text-align: left;">
+                氹仔坊眾學校 · 資訊科技及STEM專長學生<br>
+                IELTS 6.5 (2024) · F1 in Schools 最佳工程設計獎得主
+            </p>
+            <a href="https://guiadrift.asia" target="_blank" 
+               style="display: inline-block; margin-top: 30px; padding: 12px 30px; 
+                      background: var(--primary-color); color: white; 
+                      text-decoration: none; border-radius: 25px;
+                      transition: transform 0.3s ease;">
+                🏎️ 查看GUIADRIFT車隊
+            </a>
+        </header>
+
+        <section class="section" id="education">
+            <div class="card">
+                <h2 style="margin-bottom: 20px;">📚 學歷與認證</h2>
+                <ul style="list-style: none;">
+                    <li>氹仔坊眾學校 (2020-2026 預計畢業)</li>
+                    <li>Microsoft Office Specialist 專業認證：
+                        <div class="cert-badge">Word 2019</div>
+                        <div class="cert-badge">Word 2016</div>
+                        <div class="cert-badge">PowerPoint 2019</div>
+                        <div class="cert-badge">PowerPoint 2016</div>
+                        <div class="cert-badge">PowerPoint (Microsoft 365 Apps)</div>
+                    </li>
+                    <li>IELTS 6.5 （ 2024 ）</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="achievements">
+            <div class="card">
+                <h2 style="margin-bottom: 30px;">🏆 獲獎比賽</h2>
+                
+                <!-- 篩選按鈕 -->
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="初三">初中階段</button>
+                    <button class="filter-btn" data-filter="高一">高一</button>
+                    <button class="filter-btn" data-filter="高二">高二</button>
+                </div>
+
+                <!-- 獲獎比賽網格 -->
+                <div class="icon-grid">
+                    <!-- 初三 -->
+                    <div class="icon-item" data-grade="初三">
+                        <i class="fas fa-question-circle fa-3x"></i>
+                        <h3>全澳資訊科技知識問答</h3>
+                        <p>初中組優異獎</p>
+                        <div class="award-category">2022</div>
+                    </div>
+
+                    <div class="icon-item" data-grade="初三">
+                        <i class="fas fa-robot fa-3x"></i>
+                        <h3>MakeX機器人挑戰賽</h3>
+                        <p>澳門區賽 一等獎</p>
+                        <div class="award-category">2023</div>
+                    </div>
+
+                    <!-- 高一 -->
+                    
+                    <div class="icon-item" data-grade="高一">
+                        <i class="fas fa-code fa-3x"></i>
+                        <h3>2023世界机器人大赛青少年机器人设计大赛烟台锦标赛</h3>
+                        <p>扣钉创意程序赛项 一等奖</p>
+                        <div class="award-category">2023</div>
+                    </div>
+
+                    <div class="icon-item" data-grade="高一">
+                        <i class="fas fa-medal fa-3x"></i>
+                        <h3>第四屆澳門聯校科學展覽「計劃書設計比賽」</h3>
+                        <p>傑出項目獎</p>
+                        <div class="award-category">2024</div>
+                    </div>
+
+                    <div class="icon-item" data-grade="高一">
+                        <i class="fas fa-microphone fa-3x"></i>
+                        <h3>第38屆全澳學生朗誦比賽</h3>
+                        <p>G04粵語高中集誦 一等獎</p>
+                        <div class="award-category">2024</div>
+                    </div>
+
+                    <div class="icon-item" data-grade="高一">
+                        <i class="fas fa-medal fa-3x"></i>
+                        <h3>2024年港澳青少年網絡技能競賽</h3>
+                        <p>Silver</p>
+                        <div class="award-category">2024</div>
+                    </div>
+
+
+                    <!-- 高二 -->
+                    <div class="icon-item" data-grade="高二">
+                        <i class="fas fa-trophy fa-3x"></i>
+                        <h3>F1 in Schools Hong Kong& Macau Open 2024</h3>
+                        <p>Best Engineered Car Award</p>
+                        <div class="award-category">2024</div>
+                    </div>
+
+                    <div class="icon-item" data-grade="高二">
+                        <i class="fas fa-medal fa-3x"></i>
+                        <h3>The 12th Macao International Innovation and Invention Expo (MiiEX)</h3>
+                        <p>Gold Medal</p>
+                        <div class="award-category">2024</div>
+                    </div>
+
+                    <div class="icon-item" data-grade="高二">
+                        <i class="fas fa-medal fa-3x"></i>
+                        <h3>2023/2024學年校園記者計劃</h3>
+                        <p>季軍</p>
+                        <div class="award-category">2024</div>
+                    </div>
+
+                    <div class="icon-item" data-grade="高二">
+                        <i class="fas fa-medal fa-3x"></i>
+                        <h3>2024/2025學年潛能擴展創新菁英賽</h3>
+                        <p>甲級獎</p>
+                        <div class="award-category">2024</div>
+                    </div>
+
+                    <div class="icon-item" data-grade="高二">
+                        <i class="fas fa-medal fa-3x"></i>
+                        <h3>紀念澳門特別行政區基本法領佈三十一週年系列活動《憲法》與
+                            《基本法》校園推廣計劃比賽</h3>
+                        <p>一等獎</p>
+                        <div class="award-category">2025</div>
+                    </div>
+                    
+                    <div class="icon-item" data-grade="高二">
+                        <i class="fas fa-medal fa-3x"></i>
+                        <h3>第二十二届广东省少年儿童发明奖评选活动</h3>
+                        <p>一等奖</p>
+                        <div class="award-category">2025</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section" id="activities">
+            <div class="card">
+                <h2 style="margin-bottom: 30px;">🌟 課外經歷</h2>
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <i class="fas fa-campground fa-3x"></i>
+                        <h3>2023澳門高中生STEM夏令營 </h3>
+                        <p>參與學生</p>
+                        <div class="award-category">2023暑期</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="activities">
+            <div class="card">
+                <h2 style="margin-bottom: 30px;">🌟 證書</h2>
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <i class="fas fa-book-open fa-3x"></i>
+                        <h3>IELTS</h3>
+                        <p>6.5</p>
+                        <div class="award-category">2024</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 滾動動畫
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+    <script>
+        // 篩選功能實現
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.icon-item[data-grade]');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 切換按鈕狀態
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // 獲取篩選條件
+                const filter = btn.dataset.filter;
+                
+                // 篩選項目
+                items.forEach(item => {
+                    const grade = item.dataset.grade;
+                    if (filter === 'all' || grade === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
